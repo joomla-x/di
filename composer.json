@@ -29,7 +29,7 @@
     },
     "extra": {
         "branch-alias": {
-            "master": "3.0-dev"
+            "dev-3.0-dev": "3.0-dev"
         }
     },
     "suggest": {
