@@ -15,21 +15,23 @@ use Joomla\DI\ServiceProviderInterface;
  */
 class ServiceProviderTest extends TestCase
 {
-	/**
-	 * @testdox When registering a service provider, its register() method is called with the container instance
-	 */
-	public function testRegisterServiceProvider()
-	{
-		$container = new Container();
+    /**
+     * @testdox When registering a service provider, its register() method is called with the container instance
+     */
+    public function testRegisterServiceProvider()
+    {
+        $container = new Container();
 
-		$mock = $this->getMockBuilder(ServiceProviderInterface::class)
-			->getMock();
+        $mock = $this->getMockBuilder(ServiceProviderInterface::class)
+                     ->getMock()
+        ;
 
-		$mock->expects($this->once())
-			->method('register')
-			->with($container);
+        $mock->expects($this->once())
+             ->method('register')
+             ->with($container)
+        ;
 
-		/** @noinspection PhpParamsInspection */
-		$container->registerServiceProvider($mock);
-	}
+        /** @noinspection PhpParamsInspection */
+        $container->registerServiceProvider($mock);
+    }
 }

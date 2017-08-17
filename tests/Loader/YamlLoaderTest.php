@@ -19,54 +19,54 @@ include_once __DIR__ . '/../Stubs/SimpleServiceProvider.php';
 class YamlLoaderTest extends TestCase
 {
 
-	/**
-	 * @testdox Loading a string
-	 */
-	public function testLoadString()
-	{
-		$content   = <<<EOF
+    /**
+     * @testdox Loading a string
+     */
+    public function testLoadString()
+    {
+        $content   = <<<EOF
 providers:
     foo:
         class: \SimpleServiceProvider
 EOF;
-		$container = new Container();
+        $container = new Container();
 
-		$loader = new YamlLoader($container);
-		$loader->load($content);
+        $loader = new YamlLoader($container);
+        $loader->load($content);
 
-		$this->assertEquals('called', $container->get('foo'));
-	}
+        $this->assertEquals('called', $container->get('foo'));
+    }
 
-	/**
-	 * @testdox Loading a string with arguments
-	 */
-	public function testLoadStringWithArgument()
-	{
-		$content   = <<<EOF
+    /**
+     * @testdox Loading a string with arguments
+     */
+    public function testLoadStringWithArgument()
+    {
+        $content   = <<<EOF
 providers:
     foo:
         class: \SimpleServiceProvider
         arguments: ['unit-test']
 EOF;
-		$container = new Container();
-		$container->set('unit-test', 'called from case');
+        $container = new Container();
+        $container->set('unit-test', 'called from case');
 
-		$loader = new YamlLoader($container);
-		$loader->load($content);
+        $loader = new YamlLoader($container);
+        $loader->load($content);
 
-		$this->assertEquals('called from case', $container->get('foo'));
-	}
+        $this->assertEquals('called from case', $container->get('foo'));
+    }
 
-	/**
-	 * @testdox Loading a file
-	 */
-	public function testLoadFile()
-	{
-		$container = new Container();
+    /**
+     * @testdox Loading a file
+     */
+    public function testLoadFile()
+    {
+        $container = new Container();
 
-		$loader = new YamlLoader($container);
-		$loader->loadFromFile(dirname(__DIR__) . '/data/services.yml');
+        $loader = new YamlLoader($container);
+        $loader->loadFromFile(dirname(__DIR__) . '/data/services.yml');
 
-		$this->assertEquals('called', $container->get('foo'));
-	}
+        $this->assertEquals('called', $container->get('foo'));
+    }
 }

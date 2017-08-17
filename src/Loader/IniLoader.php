@@ -23,57 +23,54 @@ use Joomla\DI\Container;
  */
 class IniLoader implements LoaderInterface
 {
-	/** @var Container The container */
-	private $container = null;
+    /** @var Container The container */
+    private $container = null;
 
-	/**
-	 * IniLoader constructor.
-	 *
-	 * @param   Container  $container  The container
-	 */
-	public function __construct(Container $container)
-	{
-		$this->container = $container;
-	}
+    /**
+     * IniLoader constructor.
+     *
+     * @param   Container $container The container
+     */
+    public function __construct(Container $container)
+    {
+        $this->container = $container;
+    }
 
-	/**
-	 * Helper function to load the services from a file.
-	 *
-	 * @param   string  $filename  The filename
-	 *
-	 * @return  void
-	 *
-	 * @see LoaderInterface::load()
-	 */
-	public function loadFromFile($filename)
-	{
-		$this->load(file_get_contents($filename));
-	}
+    /**
+     * Helper function to load the services from a file.
+     *
+     * @param   string $filename The filename
+     *
+     * @return  void
+     *
+     * @see LoaderInterface::load()
+     */
+    public function loadFromFile($filename)
+    {
+        $this->load(file_get_contents($filename));
+    }
 
-	/**
-	 * Loads service providers from the content.
-	 *
-	 * @param   string  $content  The content
-	 *
-	 * @return  void
-	 */
-	public function load($content)
-	{
-		$services = parse_ini_string($content, true);
+    /**
+     * Loads service providers from the content.
+     *
+     * @param   string $content The content
+     *
+     * @return  void
+     */
+    public function load($content)
+    {
+        $services = parse_ini_string($content, true);
 
-		if (!key_exists('providers', $services))
-		{
-			return;
-		}
+        if (!key_exists('providers', $services)) {
+            return;
+        }
 
-		foreach ($services['providers'] as $alias => $service)
-		{
-			if (!class_exists($service))
-			{
-				continue;
-			}
+        foreach ($services['providers'] as $alias => $service) {
+            if (!class_exists($service)) {
+                continue;
+            }
 
-			$this->container->registerServiceProvider(new $service, $alias);
-		}
-	}
+            $this->container->registerServiceProvider(new $service, $alias);
+        }
+    }
 }
