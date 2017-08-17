@@ -1,9 +1,4 @@
-# The DI Package [![Build Status](https://travis-ci.org/joomla-x/di.png?branch=3.0-dev)](https://travis-ci.org/joomla-x/di)
-
-[![Latest Stable Version](https://poser.pugx.org/joomla-x/di/v/stable)](https://packagist.org/packages/joomla-x/di)
-[![Total Downloads](https://poser.pugx.org/joomla-x/di/downloads)](https://packagist.org/packages/joomla-x/di)
-[![Latest Unstable Version](https://poser.pugx.org/joomla-x/di/v/unstable)](https://packagist.org/packages/joomla-x/di)
-[![License](https://poser.pugx.org/joomla-x/di/license)](https://packagist.org/packages/joomla-x/di)
+# The DI Package [![Build Status](https://travis-ci.org/joomla-x/di.png?branch=master)](https://travis-ci.org/joomla-x/di)
 
 The Joomla! **Dependency Injection** package provides a powerful `PSR-11` compatible
 Inversion of Control (IoC) Container for your application.
@@ -13,7 +8,7 @@ Inversion of Control (IoC) Container for your application.
 Simply run the following from the command line in your project's root directory (where your `composer.json` file is):
 
 ```sh
-composer require joomla-x/di:3.0-dev
+composer require joomla-x/di
 ```
 ## Contributing
 
