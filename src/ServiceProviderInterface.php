@@ -24,5 +24,5 @@ interface ServiceProviderInterface
 	 *
 	 * @since   1.0
 	 */
-	public function register(Container $container);
+	public function register(Container $container, $alias = null);
 }

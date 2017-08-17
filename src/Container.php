@@ -560,9 +560,9 @@ class Container implements ContainerInterface
 	 *
 	 * @since   1.0
 	 */
-	public function registerServiceProvider(ServiceProviderInterface $provider)
+	public function registerServiceProvider(ServiceProviderInterface $provider, $alias = null)
 	{
-		$provider->register($this);
+		$provider->register($this, $alias);
 
 		return $this;
 	}
