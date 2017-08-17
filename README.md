@@ -1,9 +1,9 @@
-# The DI Package [![Build Status](https://travis-ci.org/joomla-framework/di.png?branch=master)](https://travis-ci.org/joomla-framework/di) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/joomla-framework/di/badges/quality-score.png?b=2.0-dev)](https://scrutinizer-ci.com/g/joomla-framework/di/?branch=2.0-dev) [![Code Coverage](https://scrutinizer-ci.com/g/joomla-framework/di/badges/coverage.png?b=2.0-dev)](https://scrutinizer-ci.com/g/joomla-framework/di/?branch=2.0-dev)
+# The DI Package [![Build Status](https://travis-ci.org/joomla-x/di.png?branch=master)](https://travis-ci.org/joomla-x/di) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/joomla-x/di/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/joomla-x/di/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/joomla-x/di/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/joomla-x/di/?branch=master)
 
-[![Latest Stable Version](https://poser.pugx.org/joomla/di/v/stable)](https://packagist.org/packages/joomla/di)
-[![Total Downloads](https://poser.pugx.org/joomla/di/downloads)](https://packagist.org/packages/joomla/di)
-[![Latest Unstable Version](https://poser.pugx.org/joomla/di/v/unstable)](https://packagist.org/packages/joomla/di)
-[![License](https://poser.pugx.org/joomla/di/license)](https://packagist.org/packages/joomla/di)
+[![Latest Stable Version](https://poser.pugx.org/joomla-x/di/v/stable)](https://packagist.org/packages/joomla-x/di)
+[![Total Downloads](https://poser.pugx.org/joomla-x/di/downloads)](https://packagist.org/packages/joomla-x/di)
+[![Latest Unstable Version](https://poser.pugx.org/joomla-x/di/v/unstable)](https://packagist.org/packages/joomla-x/di)
+[![License](https://poser.pugx.org/joomla-x/di/license)](https://packagist.org/packages/joomla-x/di)
 
 The Joomla! **Dependency Injection** package provides a powerful `PSR-11` compatible
 Inversion of Control (IoC) Container for your application.
@@ -13,7 +13,7 @@ Inversion of Control (IoC) Container for your application.
 Simply run the following from the command line in your project's root directory (where your `composer.json` file is):
 
 ```sh
-composer require joomla/di
+composer require joomla-x/di
 ```
 ## Contributing
 

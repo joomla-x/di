@@ -29,10 +29,10 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-2.0-dev": "2.0-dev"
+            "master": "3.0-dev"
         }
     },
     "suggest": {
-        "symfony/yaml": "allows to read Yaml config file"
+        "symfony/yaml": "Allows to read Yaml config file"
     }
 }
