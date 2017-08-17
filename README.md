@@ -1,4 +1,4 @@
-# The DI Package [![Build Status](https://travis-ci.org/joomla-x/di.png?branch=3.0-dev)](https://travis-ci.org/joomla-x/di) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/joomla-x/di/badges/quality-score.png?b=3.0-dev)](https://scrutinizer-ci.com/g/joomla-x/di/?branch=3.0-dev) [![Code Coverage](https://scrutinizer-ci.com/g/joomla-x/di/badges/coverage.png?b=3.0-dev)](https://scrutinizer-ci.com/g/joomla-x/di/?branch=3.0-dev)
+# The DI Package [![Build Status](https://travis-ci.org/joomla-x/di.png?branch=3.0-dev)](https://travis-ci.org/joomla-x/di)
 
 [![Latest Stable Version](https://poser.pugx.org/joomla-x/di/v/stable)](https://packagist.org/packages/joomla-x/di)
 [![Total Downloads](https://poser.pugx.org/joomla-x/di/downloads)](https://packagist.org/packages/joomla-x/di)
