@@ -359,7 +359,7 @@ class Container implements ContainerInterface
 	 */
 	public function extend($resourceName, callable $callable)
 	{
-		$key = $this->resolveAlias($resourceName);
+		$key      = $this->resolveAlias($resourceName);
 		$resource = $this->getResource($key, true);
 
 		$closure = function ($c) use ($callable, $resource)
@@ -429,7 +429,7 @@ class Container implements ContainerInterface
 	 * Set a resource. If the value is null unsets the resource.
 	 *
 	 * @param   string   $key        Name of resources key to set.
-	 * @param   mixed    $value      Callable function to run or string to retrive when requesting the specified $key.
+	 * @param   mixed    $value      Callable function to run or string to retrieve when requesting the specified $key.
 	 * @param   boolean  $shared     True to create and store a shared instance.
 	 * @param   boolean  $protected  True to protect this item from being overwritten. Useful for services.
 	 *
