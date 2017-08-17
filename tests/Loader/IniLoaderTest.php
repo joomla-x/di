@@ -18,67 +18,67 @@ include_once __DIR__ . '/../Stubs/SimpleServiceProvider.php';
 class IniLoaderTest extends TestCase
 {
 
-	/**
-	 * @testdox Loading a string
-	 */
-	public function testLoadString()
-	{
-		$content   = <<<EOF
+    /**
+     * @testdox Loading a string
+     */
+    public function testLoadString()
+    {
+        $content   = <<<EOF
 [providers]
 foo = "\\SimpleServiceProvider"
 EOF;
-		$container = new Container();
+        $container = new Container();
 
-		$loader = new IniLoader($container);
-		$loader->load($content);
+        $loader = new IniLoader($container);
+        $loader->load($content);
 
-		$this->assertEquals('called', $container->get('foo'));
-	}
+        $this->assertEquals('called', $container->get('foo'));
+    }
 
-	/**
-	 * @testdox Loading an invalid string
-	 */
-	public function testLoadInvalidString()
-	{
-		$content   = <<<EOF
+    /**
+     * @testdox Loading an invalid string
+     */
+    public function testLoadInvalidString()
+    {
+        $content   = <<<EOF
 [providers]
 foo unit test
 EOF;
-		$container = new Container();
+        $container = new Container();
 
-		$loader = new IniLoader($container);
-		$loader->load($content);
+        $loader = new IniLoader($container);
+        $loader->load($content);
 
-		$this->assertFalse($container->has('foo'));
-	}
+        $this->assertFalse($container->has('foo'));
+    }
 
-	/**
-	 * @testdox Loading an invalid class
-	 */
-	public function testLoadWithInvalidClass()
-	{
-		$content   = <<<EOF
+    /**
+     * @testdox Loading an invalid class
+     */
+    public function testLoadWithInvalidClass()
+    {
+        $content   = <<<EOF
 [providers]
 foo = "\\NotAvailableServiceProvider"
 EOF;
-		$container = new Container();
+        $container = new Container();
 
-		$loader = new IniLoader($container);
-		$loader->load($content);
+        $loader = new IniLoader($container);
+        $loader->load($content);
 
-		$this->assertFalse($container->has('foo'));
-	}
+        $this->assertFalse($container->has('foo'));
+    }
 
-	/**
-	 * @testdox Loading a file
-	 */
-	public function testLoadFile()
-	{
-		$container = new Container();
+    /**
+     * @testdox Loading a file
+     */
+    public function testLoadFile()
+    {
+        $container = new Container();
 
-		$loader = new IniLoader($container);
-		$loader->loadFromFile(dirname(__DIR__) . '/data/services.ini');
+        $loader = new IniLoader($container);
+        $loader->loadFromFile(dirname(__DIR__) . '/data/services.ini');
 
-		$this->assertEquals('called', $container->get('foo'));
-	}
+        $this->assertEquals('called', $container->get('foo'));
+    }
 }

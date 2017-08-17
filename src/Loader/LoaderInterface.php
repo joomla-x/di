@@ -15,12 +15,12 @@ namespace Joomla\DI\Loader;
  */
 interface LoaderInterface
 {
-	/**
-	 * Loads service providers from the content.
-	 *
-	 * @param   string $content  The Content
-	 *
-	 * @return  void
-	 */
-	public function load($content);
+    /**
+     * Loads service providers from the content.
+     *
+     * @param   string $content The Content
+     *
+     * @return  void
+     */
+    public function load($content);
 }

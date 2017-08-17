@@ -18,75 +18,69 @@ use Symfony\Component\Yaml\Yaml;
  */
 class YamlLoader implements LoaderInterface
 {
-	/** @var Container The container */
-	private $container = null;
+    /** @var Container The container */
+    private $container = null;
 
-	/**
-	 * YamlLoader constructor.
-	 *
-	 * @param   Container  $container The container
-	 */
-	public function __construct(Container $container)
-	{
-		$this->container = $container;
-	}
+    /**
+     * YamlLoader constructor.
+     *
+     * @param   Container $container The container
+     */
+    public function __construct(Container $container)
+    {
+        $this->container = $container;
+    }
 
-	/**
-	 * Helper function to load the services from a file.
-	 *
-	 * @param   string  $filename  The filename
-	 *
-	 * @return  void
-	 *
-	 * @see LoaderInterface::load()
-	 */
-	public function loadFromFile($filename)
-	{
-		$this->load(file_get_contents($filename));
-	}
+    /**
+     * Helper function to load the services from a file.
+     *
+     * @param   string $filename The filename
+     *
+     * @return  void
+     *
+     * @see LoaderInterface::load()
+     */
+    public function loadFromFile($filename)
+    {
+        $this->load(file_get_contents($filename));
+    }
 
-	/**
-	 * Loads service providers from the content.
-	 *
-	 * @param   string  $content  The content
-	 *
-	 * @return  void
-	 */
-	public function load($content)
-	{
-		$data = Yaml::parse($content);
+    /**
+     * Loads service providers from the content.
+     *
+     * @param   string $content The content
+     *
+     * @return  void
+     */
+    public function load($content)
+    {
+        $data = Yaml::parse($content);
 
-		if (!key_exists('providers', $data))
-		{
-			return;
-		}
+        if (!key_exists('providers', $data)) {
+            return;
+        }
 
-		foreach ($data['providers'] as $alias => $service)
-		{
-			if (!class_exists($service['class']))
-			{
-				continue;
-			}
+        foreach ($data['providers'] as $alias => $service) {
+            if (!class_exists($service['class'])) {
+                continue;
+            }
 
-			$arguments = [];
+            $arguments = [];
 
-			if (key_exists('arguments', $service))
-			{
-				foreach ($service['arguments'] as $argument)
-				{
-					if (!$this->container->has($argument))
-					{
-						continue;
-					}
+            if (key_exists('arguments', $service)) {
+                foreach ($service['arguments'] as $argument) {
+                    if (!$this->container->has($argument)) {
+                        continue;
+                    }
 
-					$arguments[] = $this->container->get($argument);
-				}
-			}
+                    $arguments[] = $this->container->get($argument);
+                }
+            }
 
-			$reflect = new \ReflectionClass($service['class']);
+            $reflect = new \ReflectionClass($service['class']);
 
-			$provider = $reflect->newInstanceArgs($arguments);
-			$this->container->registerServiceProvider($provider, $alias);
-		}
-	}
+            $provider = $reflect->newInstanceArgs($arguments);
+            $this->container->registerServiceProvider($provider, $alias);
+        }
+    }
 }
