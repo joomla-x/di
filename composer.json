@@ -1,9 +1,9 @@
 {
-    "name": "joomla/di",
+    "name": "joomla-x/di",
     "type": "joomla-package",
     "description": "Joomla DI Package",
     "keywords": ["joomla", "framework", "dependency injection", "di", "ioc", "container"],
-    "homepage": "https://github.com/joomla-framework/di",
+    "homepage": "https://github.com/joomla-x/di",
     "license": "GPL-2.0+",
     "require": {
         "php": "~7.0",
